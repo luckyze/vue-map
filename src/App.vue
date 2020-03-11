@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+ <div id="app">
+   <div class="nav">
+     <router-link to="/mapdata">疫情地图</router-link> | 
+     <router-link to="/linedata">疫情动态</router-link>
+   </div>
+ 
+   <router-view></router-view>
+ </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#app{
+	width: 800px;
+	height: 700px;
+	margin: 50px auto;
+	border: 1px pink solid;
+	background-color:aliceblue;
+}
+.nav{
+	width: 300px;
+	height: 100px;
+	text-align: center;
+	margin: 0 auto;
+}
+.nav a{
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 20px;
+	text-decoration: none;
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+}
+.nav a.router-link-exact-active{
+	color: #42B983;
 }
 </style>
